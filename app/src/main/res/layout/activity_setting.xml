@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="codepath.nytimessearch.activities.SettingActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/content"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <TextView
+        android:id="@+id/tvBeginDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:textSize="24sp"
+        android:layout_marginTop="24dp"
+        android:text="@string/begin_date"
+        tools:ignore="SpUsage"
+        android:layout_marginLeft="24dp" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="8"
+        android:inputType="date"
+        android:maxLength="8"
+        android:digits="1234567890"
+        android:onClick="showDatePickerDialog"
+        tools:ignore="RelativeOverlap"
+        android:layout_alignBaseline="@+id/tvBeginDate"
+        android:layout_alignBottom="@+id/tvBeginDate"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/tvSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_marginTop="34dp"
+        android:text="@string/Sort"
+        tools:ignore="RtlHardcoded,SpUsage"
+        android:layout_below="@+id/etDate"
+        android:layout_alignRight="@+id/tvBeginDate"
+        android:layout_alignEnd="@+id/tvBeginDate"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <Spinner
+        android:id="@+id/spinnerOldestNewest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvSort"
+        android:layout_alignLeft="@+id/etDate"
+        android:layout_alignStart="@+id/etDate"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvSort"
+        android:textSize="20sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/New_Desk_Values"
+        tools:ignore="RtlHardcoded"
+        android:layout_marginLeft="24dp"
+        android:id="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/cbArts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinnerOldestNewest"
+        android:layout_alignStart="@+id/spinnerOldestNewest"
+        android:layout_alignTop="@+id/textView2"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/check_Box" />
+
+    <CheckBox
+        android:id="@+id/cbFashion_n_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cbArts"
+        android:layout_alignStart="@+id/cbArts"
+        android:layout_below="@+id/cbArts"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:text="@string/fashion_n_style" />
+
+    <CheckBox
+        android:id="@+id/cbSports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/sports"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/cbFashion_n_Style"
+        android:layout_alignLeft="@+id/cbFashion_n_Style"
+        android:layout_alignStart="@+id/cbFashion_n_Style" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbSports"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp"
+        android:background="@android:color/holo_purple"
+        android:text="@string/btn_save"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+        </RelativeLayout>
+</RelativeLayout>
