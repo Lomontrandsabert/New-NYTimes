@@ -53,10 +53,6 @@ public class SettingActivity extends AppCompatActivity implements DatePickerDial
                 boolean hasDeskValues = false;
                 // first parameter is the context, second is the class of the activity to launch
                 Intent i = new Intent(SettingActivity.this, SearchActivity.class );
-                // put "extras" into the bundle for access in the second activity
-                i.putExtra("BeginDate", etDate.getText().toString());
-                i.putExtra("Sort", spinner.getSelectedItem().toString());
-                i.putExtra("DeskValues", DeskValues);
 
                 if ((Sports.isChecked())){
                     //Toast.makeText(getApplicationContext(), Sports.getText().toString(), Toast.LENGTH_SHORT).show();
@@ -78,6 +74,11 @@ public class SettingActivity extends AppCompatActivity implements DatePickerDial
                     Toast.makeText(getApplicationContext(),DeskValues, Toast.LENGTH_SHORT).show();
                     i.putExtra("NewsDeskValues", DeskValues);
                 }
+                // put "extras" into the bundle for access in the second activity
+                i.putExtra("BeginDate", etDate.getText().toString());
+                i.putExtra("Sort", spinner.getSelectedItem().toString());
+                i.putExtra("DeskValues", DeskValues);
+
                 // brings up the second activity
                 startActivity(i);
             }
